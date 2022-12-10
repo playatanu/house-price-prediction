@@ -37,4 +37,4 @@ def predic():
 
     return {"estimate" : predict(data['sqrt'],data['bed'],data['bath'],data['lat'],data['lng'],getHouseList())}
 
-app.run(debug=True)
+app.run()
