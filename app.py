@@ -2,13 +2,20 @@ from flask import Flask, request
 from flask_mysqldb import MySQL
 from pricePredic import predict
 
+from dotenv import load_dotenv,dotenv_values
+load_dotenv()
+config = dotenv_values(".env")
+
+
 app=Flask(__name__)
 
-app.config['MYSQL_HOST'] = 'sql6.freemysqlhosting.net'
-app.config['MYSQL_USER'] = 'sql6583315'
-app.config['MYSQL_PASSWORD'] = 'Yp19mUMsJF'
-app.config['MYSQL_DB'] = 'sql6583315'
+app.config['MYSQL_HOST'] = config["MYSQL_HOST"]
+app.config['MYSQL_USER'] = config['MYSQL_USER']
+app.config['MYSQL_PASSWORD'] = config['MYSQL_PASSWORD']
+app.config['MYSQL_DB'] = config['MYSQL_DB']
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
+
+
 
 mysql = MySQL(app)
 
