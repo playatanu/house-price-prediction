@@ -1,4 +1,5 @@
-flask==2.2.2
-flask_mysqldb==1.0.1
-pandas==1.
-sklearn==0.0.post1
+flask
+flask_mysqldb
+pandas
+sklearn
+python-dotenv
